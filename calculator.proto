@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.calculator";
+option java_outer_classname = "Calculator";
+
+package calculator;
+
+service Calculator {
+    rpc Calc(Request) returns (Reply) {}
+}
+
+message Request{
+    uint32 game = 1;
+    map<int32, string> pokers = 2;
+}
+
+
+message Reply{
+    uint32 game = 1;
+    map<int32, double> winpots  = 2;
+    map<int32, int32> wintype  = 3;
+}
